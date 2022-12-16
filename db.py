@@ -41,6 +41,8 @@ class Member(Base):
         return f'{self.postadr}, {self.postnr}'
     def get_paid(self):
         return self.paid
+    def kill(self):
+        del self
 
 
 

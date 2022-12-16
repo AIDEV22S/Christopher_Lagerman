@@ -64,7 +64,6 @@ while True:
 
 # Update Member
                     winTwo = sg.Window('Find Member.',gui.get_updateLayout(found))
-                    firstloop = True
 
                     while True:
                         eventwo, valuesTwo = winTwo.read()
@@ -78,13 +77,9 @@ while True:
                             gui.updateInfo(winTwo, found)
 
                         if eventwo == 'Delete Member':
-                            print('comming soon')
-
-
-
-
-
-
+                            winTwo.close()
+                            gui.update_msg('Member deleted')
+                            edit.delete_member(mID)
                 except:
                     gui.update_msg('Failed to find Member.')
             break

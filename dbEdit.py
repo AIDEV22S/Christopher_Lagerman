@@ -15,12 +15,19 @@ def add_member(fname, lname,adress,postnr,postadr):
     member = db.Member(fname.capitalize(),lname.capitalize(),adress.capitalize(),int(postnr),postadr.capitalize())
     session.add(member)
     session.commit()
+    return None
+
+def delete_member(mID):
+    session.get(db.Member, mID).kill()
+    session.commit()
+    return None
 
 
 def update_paid(mID):
     x = session.get(db.Member,mID)
     x.update_paid()
     session.commit
+    return None
 
 def findID(mID):
     return session.get(db.Member,int(mID))
