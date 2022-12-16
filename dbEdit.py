@@ -18,10 +18,10 @@ def add_member(fname, lname,adress,postnr,postadr):
     return None
 
 def delete_member(mID):
-    session.get(db.Member, mID).kill()
+    x = session.get(db.Member,mID)
+    session.delete(x)
     session.commit()
     return None
-
 
 def update_paid(mID):
     x = session.get(db.Member,mID)
