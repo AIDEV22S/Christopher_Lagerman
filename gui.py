@@ -39,6 +39,13 @@ def get_addLayout():
             [sg.Button('OK', expand_x=True), sg.Button('Clear')]
             ]
 
+def clear_add(window):
+    window['fnameInput'].update('')
+    window['lnameInput'].update('')
+    window['adressInput'].update('')
+    window['pnrInput'].update('')
+    window['padrInput'].update('')
+
 
 # Find Member
 def get_findLayout():

@@ -40,7 +40,10 @@ while True:
                     f'{valuesTwo["fnameInput"].capitalize()} {valuesTwo["lnameInput"].capitalize()}')
                 except:
                     gui.update_msg('Invalid input.')
-            winTwo.close()
+
+                winTwo.close()
+            if eventwo == 'Clear':
+                gui.clear_add(winTwo)
 
 #Find Member
     if event == 'Find Member':
