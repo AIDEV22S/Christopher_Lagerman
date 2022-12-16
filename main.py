@@ -45,6 +45,9 @@ while True:
             if eventwo == 'Clear':
                 gui.clear_add(winTwo)
 
+            if eventwo == 'Cancel':
+                winTwo.close()
+
 #Find Member
     if event == 'Find Member':
         winTwo = sg.Window('Find Member.',gui.get_findLayout())
@@ -63,7 +66,7 @@ while True:
 
 
 # Update Member
-                    winTwo = sg.Window('Find Member.',gui.get_updateLayout(found))
+                    winTwo = sg.Window('Manage member.',gui.get_updateLayout(found))
 
                     while True:
                         eventwo, valuesTwo = winTwo.read()
@@ -71,6 +74,12 @@ while True:
 
                         if eventwo == sg.WINDOW_CLOSED:
                             break
+
+                        if eventwo == 'Exit':
+                            winTwo.close()
+                            break
+
+
                         if eventwo == 'Toggle Paid Membership':
                             found.update_paid()
                             gui.updateInfo(winTwo, found)
@@ -81,7 +90,10 @@ while True:
                             edit.delete_member(mID)
                 except:
                     gui.update_msg('Failed to find Member.')
-            break
+                break
+            if eventwo == 'Cancel':
+                winTwo.close()
+                break
 
 
 window.close

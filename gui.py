@@ -36,7 +36,8 @@ def get_addLayout():
             [sg.T('Adress:'), sg.Push(), sg.I(key='adressInput')],
             [sg.T('Post number:'), sg.Push(), sg.I(key='pnrInput')],
             [sg.T('Post adress:'), sg.Push(), sg.I(key='padrInput')],
-            [sg.Button('OK', expand_x=True), sg.Button('Clear')]
+            [sg.Button('OK', expand_x=True), sg.Button('Clear')],
+            [sg.Button('Cancel',expand_x=True)]
             ]
 
 def clear_add(window):
@@ -52,7 +53,7 @@ def get_findLayout():
     return [
         [sg.T('Type member ID:'), sg.I('', key='fID')],
         [sg.T('')],
-        [sg.Button('Search', expand_x=True)]
+        [sg.Button('Search', expand_x=True),sg.Button('Cancel',expand_x=True)]
     ]
 
 
@@ -68,7 +69,8 @@ def get_updateLayout(memb):
             [sg.T('Adress:'), sg.T(f'{memb.get_adr()}', key='mAdr')],
             [sg.T('Post Adress:'), sg.T(f'{memb.get_post()}', key='mPadr')],
             [sg.T('Paid Membership:'), sg.T(f'{memb.get_paid()}', key='mPaid')],
-            [sg.Button('Toggle Paid Membership', expand_x=True),sg.Button('Delete Member',expand_x=True)]
+            [sg.Button('Toggle Paid Membership', expand_x=True),sg.Button('Delete Member',expand_x=True)],
+            [sg.Button('Exit',expand_x=True)]
             ]
 
 def updateInfo(window,memb):
