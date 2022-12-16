@@ -43,7 +43,20 @@ while True:
 
 #Find Member
     if event == 'Find Member':
-        print('Not yet done.')
+        winTwo = sg.Window('Find Member.',gui.get_findLayout())
+
+        while True:
+            eventwo, valuesTwo = winTwo.read()
+
+            if eventwo == sg.WINDOW_CLOSED:
+                break
+
+            if eventwo == 'Search':
+                try:
+
+                except:
+                    print('invalid ID')
+
 
 #Update Member
     if event == 'Update Member':

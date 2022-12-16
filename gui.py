@@ -24,7 +24,6 @@ def getWindow():
 def update_msg(msg):
     window['msg'].update(msg)
 #Add Member
-
 def get_addLayout():
     return [[sg.T('First name:'), sg.Push(), sg.I(key='fnameInput')],
     [sg.T('Last name:') , sg.Push(), sg.I(key='lnameInput')],
@@ -34,6 +33,12 @@ def get_addLayout():
     [sg.Button('OK', expand_x=True), sg.Button('Clear')]
 ]
 
-
-def make_addWindow(layout):
-    sg.Window('Add Member',layout)
+#Find Member
+def get_findLayout():
+            return [
+            [sg.T('Type the ID of:'),sg.I('',key='fID')],
+            [sg.T('Result: ', key='fResult')],
+            [sg.Button('Search',expand_x=True)]
+            ]
+def make_findWindow(layout):
+    sg.Window('Find Member',layout)
