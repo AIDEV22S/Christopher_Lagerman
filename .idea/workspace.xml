@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1002852-547e-4800-b548-1728aeebae40" name="Changes" comment="minor tweak">
-      <change afterPath="$PROJECT_DIR$/gui.py" afterDir="false" />
+    <list default="true" id="d1002852-547e-4800-b548-1728aeebae40" name="Changes" comment="more code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dbEdit.py" beforeDir="false" afterPath="$PROJECT_DIR$/dbEdit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +60,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671186814375</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="more code">
+      <created>1671195062375</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1671195062375</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -79,6 +84,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="transfered over already written code." />
     <MESSAGE value="minor tweak" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor tweak" />
+    <MESSAGE value="more code" />
+    <option name="LAST_COMMIT_MESSAGE" value="more code" />
   </component>
 </project>

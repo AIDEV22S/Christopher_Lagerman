@@ -7,15 +7,21 @@ import PySimpleGUI as sg
 
 window = gui.getWindow()
 while True:
-    event, values = gui.winRead()
+    event, values = window.read()
     if event in (sg.WINDOW_CLOSED or 'Exit'):
         break
 
-    if event == 'Clear':
-        gui.clear_UI()
+    if event == 'Add Member':
+        winTwo = gui.get_add_window()
+        while True:
+            eventwo, valuesTwo = winTwo.read()
 
-    if event == 'Ok':
-        gui.ok_pressed(values['nameInpput'])
+            if event in(sg.WINDOW_CLOSED or 'Exit'):
+                break
+
+
+
+
 
 window.close
 
