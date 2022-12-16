@@ -7,12 +7,13 @@ import PySimpleGUI as sg
 
 db.createDB()
 
+
 window = gui.getWindow()
 
 input_msg = ''
 while True:
     event, values = window.read()
-    if event in (sg.WINDOW_CLOSED or 'Exit'):
+    if event == 'Exit' or event == sg.WINDOW_CLOSED:
         break
 
 #add member
@@ -53,18 +54,39 @@ while True:
 
             if eventwo == 'Search':
                 try:
+                    mID = valuesTwo['fID']
+                    found = edit.findID(valuesTwo['fID'])
+                    winTwo.close()
+
+
+# Update Member
+                    winTwo = sg.Window('Find Member.',gui.get_updateLayout(found))
+                    firstloop = True
+
+                    while True:
+                        eventwo, valuesTwo = winTwo.read()
+
+
+
+                        if eventwo == sg.WINDOW_CLOSED:
+                            break
+                        if eventwo == 'Toggle Paid Membership':
+                            found.update_paid()
+                            gui.updateInfo(winTwo, found)
+
+                        if eventwo == 'Delete Member':
+                            print('comming soon')
+
+
+
+
+
 
                 except:
-                    print('invalid ID')
-
-
-#Update Member
-    if event == 'Update Member':
-        print('Not yet done.')
-
-
-
+                    gui.update_msg('Failed to find Member.')
+            break
 
 
 window.close
+
 exit()

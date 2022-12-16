@@ -14,20 +14,34 @@ class Member(Base):
     id = Column(Integer, primary_key=True)
     fname = Column(String)
     lname = Column(String)
-    address = Column(String)
+    adress = Column(String)
     postnr = Column(Integer)
-    postaddr = Column(String)
+    postadr = Column(String)
     paid = Column(Boolean)
 
-    def __init__(self, fname, lname,address,postnr,postaddr,paid=True):
+    def __init__(self, fname, lname,adress,postnr,postadr,paid=True):
         self.fname = fname
         self.lname = lname
-        self.address = address
+        self.adress = adress
         self.postnr = postnr
-        self.postaddr = postaddr
+        self.postadr = postadr
         self.paid = paid
-    def update_paid(self,pStat):
-        self.paid = pStat
+    def update_paid(self):
+        if self.paid:
+            self.paid = False
+        else:
+            self.paid = True
+
+    #get data
+    def get_name(self):
+        return f'{self.fname} {self.lname}'
+    def get_adr(self):
+        return self.adress
+    def get_post(self):
+        return f'{self.postadr}, {self.postnr}'
+    def get_paid(self):
+        return self.paid
+
 
 
 def createDB():
