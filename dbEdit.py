@@ -5,22 +5,24 @@ from sqlalchemy import Column, Integer, String
 
 import db
 
+session = db.getSession()
+
 
 '''New members will be set to "paid" by default. I'm assuming they are added after
 the initial payment is aproved.'''
 
 def add_member(fname, lname,address,postnr,postaddr):
     member = db.Member(fname,lname,address,postnr,postaddr)
-    db.session.add(member)
-    db.session.commit()
+    session.add(member)
+    session.commit()
 
 
 def update_paid(mID,pStat):
-    x = db.session.get(db.Member,mID)
+    x = session.get(db.Member,mID)
     x.update_paid(pStat)
-    db.session.commit
+    session.commit
 
 def findID(mID):
-    return db.session.get(db.Member,mID)
+    return session.get(db.Member,mID)
 
 

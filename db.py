@@ -32,3 +32,6 @@ class Member(Base):
 
 def createDB():
     Base.metadata.create_all(engine)
+
+def getSession():
+    return session

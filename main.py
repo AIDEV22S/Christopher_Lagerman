@@ -1,12 +1,22 @@
 #My Code
 import db
 import dbEdit as edit
-#SQL-Alch
+import gui
+#SGUI
+import PySimpleGUI as sg
 
-a=2
+window = gui.getWindow()
+while True:
+    event, values = gui.winRead()
+    if event in (sg.WINDOW_CLOSED or 'Exit'):
+        break
 
-db.createDB()
+    if event == 'Clear':
+        gui.clear_UI()
 
-edit.add_member('John','Smith','Streetname 1',11111,'Stockholm')
+    if event == 'Ok':
+        gui.ok_pressed(values['nameInpput'])
 
-print(f'{edit.findID(a).fname}{edit.findID(a).lname}')
+window.close
+
+exit()
