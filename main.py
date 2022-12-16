@@ -5,24 +5,53 @@ import gui
 #SGUI
 import PySimpleGUI as sg
 
+db.createDB()
+
 window = gui.getWindow()
+
+input_msg = ''
 while True:
     event, values = window.read()
     if event in (sg.WINDOW_CLOSED or 'Exit'):
         break
 
+#add member
     if event == 'Add Member':
-        winTwo = gui.get_add_window()
+        winTwo = sg.Window('Add Member.',gui.get_addLayout())
+
         while True:
             eventwo, valuesTwo = winTwo.read()
 
-            if event in(sg.WINDOW_CLOSED or 'Exit'):
+            if eventwo == sg.WINDOW_CLOSED:
                 break
+
+            if eventwo == 'OK':
+                try:
+                    edit.add_member(
+                    valuesTwo['fnameInput'],
+                    valuesTwo['lnameInput'],
+                    valuesTwo['adressInput'],
+                    valuesTwo['pnrInput'],
+                    valuesTwo['padrInput'])
+
+
+                    gui.update_msg(f'Success, added new member: '
+                    f'{valuesTwo["fnameInput"].capitalize()} {valuesTwo["lnameInput"].capitalize()}')
+                except:
+                    gui.update_msg('Invalid input.')
+            winTwo.close()
+
+#Find Member
+    if event == 'Find Member':
+        print('Not yet done.')
+
+#Update Member
+    if event == 'Update Member':
+        print('Not yet done.')
 
 
 
 
 
 window.close
-
 exit()

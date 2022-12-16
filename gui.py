@@ -6,7 +6,8 @@ sg.theme('Topanga')
 sg.set_options(text_color='white')
 layout = [
     [sg.Button('Add Member',expand_x=True),sg.Button('Find Member'),sg.Button('Update Member',expand_x=True)],
-    [sg.T('')],
+    [sg.Text(' ')],
+    [sg.T('Chose an action.',key='msg',justification='center')],
     [sg.Button('Exit',expand_x=True)]
 ]
 
@@ -20,16 +21,19 @@ def winRead():
 def getWindow():
     return window
 
+def update_msg(msg):
+    window['msg'].update(msg)
 #Add Member
 
-add_layout = [[sg.T('First name:'), sg.Push(), sg.I(key='fnameInput')],
+def get_addLayout():
+    return [[sg.T('First name:'), sg.Push(), sg.I(key='fnameInput')],
     [sg.T('Last name:') , sg.Push(), sg.I(key='lnameInput')],
     [sg.T('Adress:'),sg.Push(),sg.I(key='adressInput')],
-    [sg.T('Post number:'),sg.Push(),sg.I(key='postnrInput')],
-    [sg.T('Post adress:'),sg.Push(),sg.I(key='postaddrInput')],
-    [sg.Button('Ok', expand_x=True), sg.Button('Clear')]
+    [sg.T('Post number:'),sg.Push(),sg.I(key='pnrInput')],
+    [sg.T('Post adress:'),sg.Push(),sg.I(key='padrInput')],
+    [sg.Button('OK', expand_x=True), sg.Button('Clear')]
 ]
 
-add_window = sg.Window('Add Member',add_layout)
-def get_add_window():
-    return add_window
+
+def make_addWindow(layout):
+    sg.Window('Add Member',layout)

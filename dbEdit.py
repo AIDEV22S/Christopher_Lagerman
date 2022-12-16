@@ -12,7 +12,7 @@ session = db.getSession()
 the initial payment is aproved.'''
 
 def add_member(fname, lname,address,postnr,postaddr):
-    member = db.Member(fname,lname,address,postnr,postaddr)
+    member = db.Member(fname.capitalize(),lname.capitalize(),address.capitalize(),int(postnr),postaddr.capitalize())
     session.add(member)
     session.commit()
 
