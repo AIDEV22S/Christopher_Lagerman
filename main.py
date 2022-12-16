@@ -69,7 +69,6 @@ while True:
                         eventwo, valuesTwo = winTwo.read()
 
 
-
                         if eventwo == sg.WINDOW_CLOSED:
                             break
                         if eventwo == 'Toggle Paid Membership':
